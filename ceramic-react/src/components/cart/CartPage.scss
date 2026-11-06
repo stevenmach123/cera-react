@@ -1,0 +1,77 @@
+.begin-container{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:10px;
+    width:60rem;
+    margin:0rem auto;
+    
+}
+.pic{
+    width:5rem;
+    height:5rem;
+    border-radius: 100%;
+    border:2px solid var(--color-outline-variant);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-surface-container-lowest);
+    img{
+        position:relative;
+        top:-0.2rem;
+        width:75%;
+        height: 75%;
+        object-fit:contain;
+    }
+    img.car{
+        width:85%;
+        height: 85%;
+        top:-0.1rem;
+    }
+}
+
+
+.tab-label-wrapper.active-square {
+  width:100%;
+  color: var(--color-primary);
+  font-weight: bold;
+  
+}
+::ng-deep .custom-square-tabs .mat-mdc-tab.mdc-tab--active {
+  background-color:var(--color-primary) !important;
+}
+
+
+
+
+
+
+
+.part11{
+    border:1px solid var(--color-outline-variant);
+    grid-row: 1/span 2;
+    grid-column: 2;
+}
+.part12{
+    border:1px solid var(--color-outline-variant);
+    min-height: 200px;
+    grid-row: 3/span 2;
+    grid-column:2;
+    
+}
+
+
+.part21{
+    border:1px solid var(--color-outline-variant);
+    display: flex;
+}
+.part22{
+    border:1px solid var(--color-outline-variant);
+    
+    
+}
+.part31{
+    border:1px solid var(--color-outline-variant);
+}
+.part32{
+    border:1px solid var(--color-outline-variant);
+}

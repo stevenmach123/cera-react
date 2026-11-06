@@ -1,0 +1,312 @@
+.intro-page {
+  padding: 2rem 0;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--color-surface-container-low2);
+  border-radius: var(--radius-large);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-outline-variant);
+}
+
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--color-on-surface-variant);
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  padding: 0.8rem 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  border-radius: var(--radius-button);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-cta:hover {
+  background-color: #d41313;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+ 
+}
+
+.tab {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--color-surface-container-lowest);
+}
+
+.tab:hover,
+.tab.active {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
+}
+
+/* Featured Grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  
+}
+
+.featured-card {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(120, 113, 108, 0.1);
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image {
+  width: 100%;
+  height: 160px;
+}
+
+.featured-info {
+  padding: 1rem;
+}
+
+.featured-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-on-surface-variant);
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.featured-desc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-on-surface-variant);
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.faq-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-on-surface-variant);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-on-surface);
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--color-primary);
+}
+
+.faq-toggle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.faq-answer {
+  padding: 0 0 1rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-on-surface-variant);
+}
+
+/* Highlight Section */
+.highlight-section {
+  margin-bottom: 2rem;
+}
+
+.highlight-card {
+  display: flex;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.highlight-image {
+  width: 40%;
+  min-height: 250px;
+  background-color: var(--color-surface-container-lowest);
+}
+
+.highlight-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.highlight-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.highlight-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-on-surface);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.highlight-desc {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-on-surface-variant);
+  margin-bottom: 1.5rem;
+}
+
+.highlight-btn {
+  padding: 0.6rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  border-radius: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.highlight-btn:hover {
+  background-color: #d41313;
+}
+
+.temp2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border:1px solid red
+}
+.temp3{
+ display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+   border:1px solid red
+}

@@ -1,0 +1,97 @@
+:root {
+   /* Backgrounds & Surfaces */
+  --color-background: #FDFDFD;
+  --color-surface: #F5F5F4;
+  --color-surface-dim: #eaeaea;
+  --color-surface-bright: #F8FAFC;
+  
+  /* Surface Containers (Cards, Sections) */
+  --color-surface-container-lowest: #FDFDFD;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container-low2:#F7FAFF;
+  --color-surface-container: #F5F5F4;
+
+  --color-surface-cg:#f3f6f7; //f4f6f7
+  --color-text-grey: #6B7280; //737373
+  --color-text-sg: #B0B0B0;
+  /* Text & Content */
+  --color-on-surface: #78716C;
+  --color-text-slate: #64748B;
+  --color-text-hint:#94A3B8;
+  --color-inverse-surface: #1b1b1b;
+  --color-inverse-on-surface: #FDFDFD;
+  
+  /* Borders & Outlines */
+  --color-outline: #78716C;
+  --color-outline-variant: #ECECEA;
+  
+  /* Primary Brand Color (Red) */
+  --color-surface-tint: #F01919;
+  --color-primary: #F01919;
+  --color-on-primary: #FDFDFD;
+  --color-primary-container: #F01919;
+  --color-on-primary-container: #FDFDFD;
+  --color-inverse-primary: #ffdad7;
+  
+  /* Secondary & Tertiary (Using the Grey palette) */
+  --color-secondary: #78716C;
+  --color-on-secondary: #FDFDFD;
+  --color-tertiary: #78716C;
+  --color-on-tertiary: #FDFDFD;
+  
+  /* Fixed Variations (for pills/badges) */
+  --color-primary-fixed: #FDFDFD;
+  --color-primary-fixed-dim: #F8FAFC;
+  --color-on-primary-fixed: #F01919;
+  
+  /* Layout specifics */
+  --color-surface-variant: #F8FAFC;
+  
+  /* Typography (kept from original) */
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Shapes (kept from original) */
+  --radius-button: 0.75rem;
+  --radius-card: 1.25rem;
+  --radius-large: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding:0px 2px; 
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+}
+

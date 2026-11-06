@@ -1,0 +1,113 @@
+
+.cate-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding:1rem 2rem;
+    border:1px solid var(--color-outline-variant);
+  font-family:  var(--font-serif);
+  background: var(--bg-grad1)
+  
+}
+.product-list {
+  padding: 1rem 0;
+  border:1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-lowest);
+}
+
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: minmax(250px, auto);
+}
+
+.product-card {
+  background-color: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-card);
+  border: 1px solid none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(120, 113, 108, 0.1);
+
+  display:flex; 
+  flex-direction: column;
+
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(120, 113, 108, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  border-bottom: 1px solid var(--color-outline-variant);
+  
+}
+
+.product-info {
+  padding: 0.8rem;
+  flex-direction: column;
+  display:flex;
+  flex-grow:1;
+  justify-content: space-between;
+  border:1px solid none;
+}
+
+.product-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-on-surface);
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.product-des {
+  font-family: var(--font-sans);
+  font-size: 0.3rem;
+  color: var(--color-text-slate);
+  font-weight: 400;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  border-radius: var(--radius-button);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self:flex-end;
+}
+
+.add-btn:hover {
+  background-color: #d41313;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+}

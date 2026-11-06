@@ -1,0 +1,44 @@
+.begin-container{
+  display:flex; 
+  gap:2rem;
+  position:relative
+}
+
+
+.border-filter {
+  border-radius: var(--radius-button);
+  border: 1px solid var(--color-outline);
+}
+
+.popup-menu {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.range-slider-container {
+  .slider-track {
+    background-color: var(--color-surface-container);
+  }
+  
+  .slider-selection {
+    background-color: var(--color-primary);
+  }
+  
+  .slider-thumb {
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 6px rgba(120, 113, 108, 0.2);
+  }
+  
+
+
+}
+.apply_button{
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-button);
+}  
