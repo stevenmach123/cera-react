@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Intro.scss';
 import { Cates } from '../../types/data';
 import { Organize } from '../../types/types';
+import SearchRoom from './SearchRoom';
 
 interface Faq {
   question: string;
@@ -57,7 +58,7 @@ export default function Intro() {
     let mod = 1;let index=0
     let temp:{items:string[],org:Organize} 
     
-    
+
     for(const v of Cates){   
         if(!(range%(mod+1)) ){
             mod = random() ?3 :2
@@ -108,6 +109,8 @@ export default function Intro() {
           </Link>
         </div>
       </div>
+      <SearchRoom />
+
 
       {/* Category Tabs */}
       <div className="category-tabs">

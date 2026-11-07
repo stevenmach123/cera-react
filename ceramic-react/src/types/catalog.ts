@@ -77,6 +77,7 @@ export interface Collection {
 export interface Room {
   displayName: string;
   name: string;
+  des:string
   sub_cate: RoomSubCate[];
   collection?: Collection[];
 }

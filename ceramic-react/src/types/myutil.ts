@@ -1,5 +1,5 @@
 import { SubCate_Brand_Product, Sub_Cate_Product, SubCates } from './data';
-import type { BrandName, BrandProduct, Product, SubCate } from './catalog';
+import type { BrandName, BrandProduct, Product, Room, SubCate } from './catalog';
 
 export function extract_brand_popular_product(brand: BrandName): BrandProduct[] {
   return Object.entries(SubCate_Brand_Product)
@@ -17,4 +17,10 @@ export function build_sub_cate_product_dict(): SubCateProductDict {
     );
   }
   return dict;
+}
+export function get_popular_products_from_room(room: Room): Product[] {
+  const subCateNames = room.sub_cate.map((s) => s.sub_cate_name);
+  return Object.entries(Sub_Cate_Product)
+    .filter(([subCateName]) => subCateNames.includes(subCateName))
+    .flatMap(([, products]) => products.filter((product) => product.other_features.includes('popular')));
 }

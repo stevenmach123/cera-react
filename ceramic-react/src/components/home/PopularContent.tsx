@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './PopularContent.scss';
 import { groups,PopularGroup,PopularItem } from '../../types/types';
 import { useCart } from '../../context/CartContext';
+import PopularProductCard from './PopularProductCard';
 
 
 
@@ -42,29 +43,15 @@ export default function PopularContent() {
        <div className="popular-nav">
             <button className="nav-arrow" disabled={currentGroupIndex === 0} onClick={previousGroup}>‹</button>
             <div className="popular-scroll" ref={scrollContainerRef}>
-                {groups[currentGroupIndex].items.map((product, i) =>
-                    <div key={i} className="popular-card">
-                    <div
-                        className="popular-image"
-                        style={{ backgroundColor: product.img }}
-                    />
-                    <div className="popular-info">
-                        <div>{
-                            product.des.length >= 2
-                            ? <p>{product.des.join(' ● ')}</p>
-                            : product.des.map((des, idx) => <p key={idx}>{des}</p>)
-                        }</div>
-                        <h3 className="popular-name">{product.label}</h3>
-                    
-                    </div>
-                    <button
-                        className="add-btn2"
-                        onClick={() => addProduct({ name: product.label, img: product.img })}
-                    >
-                        Chọn
-                    </button>
-                    </div>
-                )}
+                {groups[currentGroupIndex].items.map((product, i) =>(
+                  <PopularProductCard
+                      i={i}
+                      product={product}
+                      wordpic={product.label}
+                      des={product.des}
+                      />
+         
+                ) )}
             </div>
             <button className="nav-arrow"  disabled={currentGroupIndex === groups.length - 1} onClick={nextGroup}>
             ›

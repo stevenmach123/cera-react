@@ -533,6 +533,7 @@ export const rooms: Room[] = [
   {
     displayName: 'Phòng Ăn',
     name: 'dinning',
+    des: 'Bộ sưu tập gốm sứ hoàn chỉnh cho phòng ăn, từ bát đĩa bếp đến chén trà.',
     sub_cate: [
       {
         displayName: 'Bát Đĩa Bếp',
@@ -610,6 +611,7 @@ export const rooms: Room[] = [
   {
     displayName: 'Phòng Khách',
     name: 'living',
+    des: 'Trang trí phòng khách với bình hoa sứ, gạch hoa văn và ghế ngồi gốm.',
     sub_cate: [
       {
         displayName: 'Ghế Đơn',
@@ -663,6 +665,7 @@ export const rooms: Room[] = [
   {
     displayName: 'Phòng Bếp',
     name: 'kitchen',
+    des: 'Gốm sứ nhà bếp từ hiện đại đến truyền thống, bao gồm nồi đất và bộ bát đĩa.',
     sub_cate: [
       {
         displayName: 'Bát Đĩa Bếp',
@@ -734,6 +737,7 @@ export const rooms: Room[] = [
   {
     displayName: 'Sân Vườn',
     name: 'garden',
+    des: 'Sản phẩm gốm sứ cho không gian ngoài trời, từ ghế sân vườn đến móc treo trang trí.',
     sub_cate: [
       {
         displayName: 'Ghế Ngồi Sân Vườn',
@@ -782,6 +786,7 @@ export const rooms: Room[] = [
   {
     displayName: 'Phòng Trưng Bày',
     name: 'showroom',
+    des: 'Bộ sưu tập trưng bày gốm sứ cao cấp với bình hoa, tượng nghệ thuật và gạch trang trí.',
     sub_cate: [
       {
         displayName: 'Bình Hoa Sứ',
