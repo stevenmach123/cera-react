@@ -7,6 +7,7 @@ import './BaseLayout.scss';
 export default function BaseLayout() {
   return (
     <>
+
       <nav className="info-nav-bar">
         <div className="nav-container">
           <Link to="/home" className="nav-logo">
@@ -31,8 +32,6 @@ export default function BaseLayout() {
 
       <SearchSection />
       <CartSidebar />
-      <PopularContent />
-
       <Outlet />
     </>
   );

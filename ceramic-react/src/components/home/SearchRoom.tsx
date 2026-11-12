@@ -56,14 +56,12 @@ export default function SearchRoom() {
                         ))}    
                     </div>
 
-                    <div>
-                       
+                    <div>                 
                         <div className="collection-list">
                         {selectedRoom.collection?.map((col) => (
-                            <div key={col.name} className="collection-card">
-                            <div className="collection-image" />
-                            <span className="collection-name">{col.displayName}</span>
-                            </div>
+                             <div key={col.name}  className="sub-cate-item" style={{width:'180px',aspectRatio:'1/1.2'}}>
+                                 <span>{col.displayName}</span>
+                             </div>
                         ))}
                         </div>
                     </div>

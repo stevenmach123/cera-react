@@ -125,8 +125,8 @@
   padding: 0.5rem 0.75rem;
   width: 150px;
   display:inline-flex;
-    justify-content: flex-start;
-     align-items: flex-end;
+ justify-content: flex-start;
+align-items: flex-end;
   aspect-ratio: 1 / 1;
   background-color: var(--color-surface-container-lowest);
   border: 1px solid var(--color-outline-variant);
@@ -148,9 +148,8 @@
 /* Collection horizontal list */
 .collection-list {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   overflow-x: auto;
-  padding-bottom: 0.25rem;
   scrollbar-width: thin;
   scrollbar-color: var(--color-outline-variant) transparent;
 
@@ -164,35 +163,6 @@
   }
 }
 
-.collection-card {
-  flex-shrink: 0;
-  width: 140px;
-  background-color: var(--color-surface-container-lowest);
-  border: 1px solid var(--color-outline-variant);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  transition: all 0.2s ease;
-
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 2px 8px rgba(120, 113, 108, 0.12);
-  }
-}
-
-.collection-image {
-  width: 100%;
-  height: 100px;
-  background-color: var(--color-surface-cg);
-}
-
-.collection-name {
-  display: inline-block;
-  padding: 0.5rem 0.6rem;
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  color: var(--color-text-grey);
-  text-align: left;
-}
 
 /* Popular products */
 .popular-product-list {

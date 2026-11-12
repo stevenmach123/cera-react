@@ -4,6 +4,9 @@ import './Intro.scss';
 import { Cates } from '../../types/data';
 import { Organize } from '../../types/types';
 import SearchRoom from './SearchRoom';
+import SearchBrand from './SearchBrand';
+import PopularContent from './PopularContent';
+import BrandIntro from './BrandIntro';
 
 interface Faq {
   question: string;
@@ -110,6 +113,10 @@ export default function Intro() {
         </div>
       </div>
       <SearchRoom />
+      <PopularContent />
+      <SearchBrand/>
+      <BrandIntro/>
+
 
 
       {/* Category Tabs */}
