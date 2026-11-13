@@ -12,7 +12,7 @@ export default function SearchRoom() {
 
   return (
     <section className="search-room">
-      <h2 className="search-room-title">Search by Room</h2>
+      <h2 className="search-room-title">Tìm kiếm theo Phòng</h2>
       <div className="search-room-grid">
         {/* Left: Room list */}
         <div className="search-room-left">
@@ -36,7 +36,7 @@ export default function SearchRoom() {
             <>
               {/* Part 1: sub_cate list */}
               <div className="right-section">
-                <h3 className="right-section-title">Sub Categories</h3>
+                <h3 className="right-section-title">Danh Mục Con</h3>
                 
                   {selectedRoom.sub_cate.map((sc) => (
                     <div key={sc.sub_cate_name} className="sub-cate-item">
@@ -70,7 +70,7 @@ export default function SearchRoom() {
 
               {/* Part 3: popular products */}
               <div className="right-section">
-                <h3 className="right-section-title">Popular {selectedRoom.displayName} Product</h3>
+                <h3 className="right-section-title">Sản phẩm {selectedRoom.displayName} phổ biến</h3>
                 <div className="popular-product-list">
                   {popularProducts.map((p,i) => (
                     <PopularProductCard

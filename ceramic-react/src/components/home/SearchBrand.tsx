@@ -18,7 +18,7 @@ export default function SearchBrand() {
 
   return (
     <section className="search-room">
-      <h2 className="search-room-title">Search by Brand</h2>
+      <h2 className="search-room-title">Tiềm kiếm theo Thương Hiệu</h2>
       <div className="search-room-grid">
         {/* Left: Brand list */}
         <div className="search-room-left">
@@ -39,7 +39,7 @@ export default function SearchBrand() {
             <>
               {/* Part 1: Brand sub categories */}
               <div className="right-section">
-                <h3 className="right-section-title">Sub Categories</h3>
+                <h3 className="right-section-title">Danh Mục Con</h3>
                 {selectedBrandSubCates.map((bsc) =>
                   bsc.sub_cate.map((sub) => (
                     <div key={sub} className="sub-cate-item">
@@ -51,7 +51,7 @@ export default function SearchBrand() {
 
               {/* Part 2: popular products */}
               <div className="right-section">
-                <h3 className="right-section-title">Popular {selectedBrand.displayName} Products</h3>
+                <h3 className="right-section-title">Sản phẩm {selectedBrand.displayName} phổ biến</h3>
                 <div className="popular-product-list">
                   {popularProducts.map((p, i) => (
                     <PopularProductCard

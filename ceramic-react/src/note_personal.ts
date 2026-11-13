@@ -14,7 +14,7 @@ let BrandSubCates = [{displayName:'same as ones in  BrandBigCates',name:'toto','
 let SubCate_Brand_Product = {"toto_subtype1":[ {displayName:'',name:"a1_item1",des:"",branch_brand:['toto','toto_subtype1'],popular:true}, {"toto_subtype2":[]} ]}   
 
 type Feature = 'popular' | 'unique' 
-type Toto_SubType = 'toto_subtype1' | 'toto_subtype2' ...
+type Tofdfdfdsdfsdfsfsdfdfdssfdddsdsds= 'toto_subtype1' | 'toto_subtype2' ...
 type Inax_SubType = 'inax_subtype1' | 'inax_subtype2' ...
 type Branch_Brand = ['toto',Toto_SubType] | ['inax',Inax_SubType]
 type Product = {displayName:string,name:string,big_cate_name:string,sub_cate_name:string,des:string,other_features:Feature[],branch:Branch_Brand} 
@@ -67,7 +67,28 @@ popular
 
 
 //relation of some overlap between mock data such as Sub_Cate_Product vs SubCate_Brand_Product, rooms sub_cate vs Subcates , rooms collection vs Sub_Cate_Product. can be creative on construct mock data or types.     
+let v = "dfd"
+data_item = [{img:'#'},{img:'#'}]
+function ImageMap(item)=>{
+    item.src.include('#')?<div class="color-img"></div> : <img src={data_item.src} /> 
+}
+<ImageMap item={data_item} />
 
 
 
+const tabCount = tabs.length; 
+const [tabPaused,SetTabPaused] = useState<>() 
+const [tabIndex,SetTabIndex] = useState(0); 
+const [activeTab, setActiveTab] = useState(tabs[0].key);
 
+
+useEffect(()=>{
+    if(tabPaused || tabCount ) return
+    const timer = setInterval(()=>
+        SetTabIndex(index=>{
+            setActiveTab(activeTab[(index+1)%(tabCount+1)])
+            return index +1;
+        })
+    ,[AUTOPLAYTAB_MS])
+    return ()=> clearInterval(timer)
+},[tabPaused,tabCount])

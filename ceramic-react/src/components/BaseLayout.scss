@@ -40,6 +40,9 @@
 .nav-link:hover {
   color: var(--color-primary);
 }
+span,p{
+  font-weight:500;
+}
 
 @media (max-width: 768px) {
   .nav-container {

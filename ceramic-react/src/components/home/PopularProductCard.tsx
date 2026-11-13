@@ -16,17 +16,16 @@ export default function PopularProductCard({ i, product, wordpic,des }: PopularP
   return (
     <div key={i} className="popular-card" >
       <div className="popular-image" style={{ backgroundColor: product?.img }}>
-         <span style={{ margin: 'auto', fontSize: '4em', border: '1px solid none' }}>
-          {!product?.img ? wordpic[0] : ''}
-        </span> 
+         {!product?.img && <span style={{ margin: 'auto', fontSize: '4em', border: '1px solid none' }}>{wordpic[0]}</span> }
+        
       </div>
 
       <div className="popular-info">
         <div>
           {des
             ? des.length >= 2
-              ? <p>{des.join(' ● ')}</p>
-              :des.map((des, idx) => <p key={idx}>{des}</p>)
+              ? <span>{des.join(' ● ')}</span>
+              :des.map((des, idx) => <span key={idx}>{des}</span>)
             : <></>}
         </div>
         <h3 className="popular-name">{wordpic}</h3>

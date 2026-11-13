@@ -6,7 +6,8 @@ import { Organize } from '../../types/types';
 import SearchRoom from './SearchRoom';
 import SearchBrand from './SearchBrand';
 import PopularContent from './PopularContent';
-import BrandIntro from './BrandIntro';
+import ValueTabs from './ValueTabs';
+import HeroSlider from './HeroSlider';
 
 interface Faq {
   question: string;
@@ -14,18 +15,7 @@ interface Faq {
   open: boolean;
 }
 
-const tabs = [
-  { key: 'hotsale', label: 'Hot Sale' },
-  { key: 'foreign', label: 'Foreign' },
-  { key: 'new-arrival', label: 'New Arrival' },
-];
 
-const featuredItems = [
-  { name: 'Heritage Vase', desc: 'Classic earth-toned vase', color: '#E8D9C2' },
-  { name: 'Artisan Bowl', desc: 'Hand-thrown ceramic bowl', color: '#D0B995' },
-  { name: 'Rustic Plate Set', desc: 'Set of 4 dinner plates', color: '#F0D9B5' },
-  { name: 'Clay Sculpture', desc: 'Decorative centerpiece', color: '#E8D9C2' },
-];
 
 const initialFaqs: Faq[] = [
   {
@@ -82,9 +72,8 @@ export default function Intro() {
   },[])
 
   const toggleFaq = (index: number) => {
-    setFaqs((prev) =>
-      prev.map((f, i) => (i === index ? { ...f, open: !f.open } : f))
-    );
+    faqs[index].open  = !faqs[index].open
+    setFaqs([...faqs]);
   };
 
   return (
@@ -100,27 +89,16 @@ export default function Intro() {
         ) 
       }
       </section>  
-      {/* Hero Section */}
-      <div className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">Heritage Ceramics</h1>
-          <p className="hero-subtitle">
-            Handcrafted with tradition, designed for modern living
-          </p>
-          <Link to="/products" className="hero-cta">
-            Explore Collection
-          </Link>
-        </div>
-      </div>
+       <HeroSlider />
       <SearchRoom />
       <PopularContent />
       <SearchBrand/>
-      <BrandIntro/>
-
+    
+      <ValueTabs></ValueTabs>
 
 
       {/* Category Tabs */}
-      <div className="category-tabs">
+      {/* <div className="category-tabs">
         {tabs.map((tab) => (
           <span
             key={tab.key}
@@ -130,9 +108,9 @@ export default function Intro() {
             {tab.label}
           </span>
         ))}
-      </div>
+      </div> */}
 
-      {/* Featured Products Grid */}
+      {/* Featured Products Grid
       <div className="featured-grid">
         {featuredItems.map((item, i) => (
           <div className="featured-card" key={`${item.name}-${i}`}>
@@ -146,7 +124,7 @@ export default function Intro() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* FAQ Accordion */}
       <div className="faq-section">

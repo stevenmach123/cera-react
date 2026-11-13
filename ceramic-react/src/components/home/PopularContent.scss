@@ -27,21 +27,31 @@
   padding: 0rem 1rem;
   position: relative;
 }
+.popular-track-viewport {
+  border:1px solid none;
+  min-width: 0;          /* allow shrink inside flex row */
+  flex-grow:1;
+  overflow:hidden;
+}
+.popular-track{
+    display:flex;
+    transition: transform 0.6s cubic-bezier(0.45, 0, 0.2, 1);
+    width:100%;
+    border:1px solid none;
+  
+}
+.popular-slide {
+  flex: 0 0 100%;       
+  min-width: 0;
+  display: flex;
+  padding:0 2rem;
+  gap: 1rem;
+ 
+}
 
 .popular-scroll-container {
   flex: 1;
   overflow: hidden;
-}
-
-.popular-scroll {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding: 0.5rem 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-outline-variant) transparent;
-  -webkit-overflow-scrolling: touch;
-  width:100%;
 }
 
 
@@ -58,7 +68,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+
   color:   var(--color-text-grey);
 }
 
@@ -82,7 +92,7 @@
 }
 
 .popular-card {
-  background-color: var(--color-surface-container-low);
+  background-color: var(--color-surface-container-lowest);
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-card);
   border: 1px solid none;
@@ -121,7 +131,7 @@
   transition: box-shadow 0.3s ease;
 }
 .popular-info {
-  background-color:var(--color-surface-container-lowest) ;
+  background-color:var(--color-surface-container-low);
   padding: 0.3rem 0.8rem;
   flex-direction: column;
   display:flex;

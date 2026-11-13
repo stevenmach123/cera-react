@@ -15,6 +15,7 @@ export default defineConfig([
     '@typescript-eslint/no-use-before-define': 'off',
     "@typescript-eslint/no-unused-vars":'off',
     'react-hooks/set-state-in-effect': 'off',
+    'react-hooks/immutability' :'off'
   },
     files: ['**/*.{ts,tsx}'],
     extends: [
