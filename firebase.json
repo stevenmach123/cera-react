@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "ceramic-react/build",
+    "target":"app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

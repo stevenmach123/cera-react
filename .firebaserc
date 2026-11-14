@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "porfolio-9157b"
+  },
+   "targets": {
+    "porfolio-9157b": {
+       "hosting": {
+        "app": ["ceramain"],
+        "prod": ["cermain"]   
+
+      }
+    }
+}
+}
