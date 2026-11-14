@@ -2,14 +2,26 @@ export interface FilterItem {
   id: number;
   label: string;
   checked: boolean;
+  count?: number;
 }
 
 export interface FilterSlide {
+  id: string;
+  title: string;
+  unit: string;
+  step: number;
+  minGap: number;
   fix_min: number;
   fix_max: number;
   min: number;
   max: number;
 }
+
+export interface FilterRangeValue {
+  min: number;
+  max: number;
+}
+
 
 export interface CartItem {
   name: string;

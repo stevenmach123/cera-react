@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "ceramic-react/build",
+    "public": "ceramic-react/dist",
     "target":"app",
     "ignore": [
       "firebase.json",
