@@ -25,9 +25,9 @@ export default function CartSidebar() {
         </button>
 
         <div className="cart-sidebar-header">
-          <span className="headsize">Võ hàng</span>
-          <span style={{ fontSize: '0.9rem' }}>có</span>
-          <span className="headsize">{cartItems.length}&nbsp;món</span>
+          <span className="headsize">Võ hàng có</span>
+           <span style={{color:'var(--color-primary)'}}>{cartItems.length}</span>
+          <span className="headsize">món</span>
         </div>
 
         <div className="cart-sidebar-content">
@@ -75,7 +75,7 @@ export default function CartSidebar() {
           <div className="cart-sidebar-footer">
             <div className="total">
               <span>Tổng số lượng:</span>
-              <span className="total-price">{totalCount}</span>
+              <span style={{fontSize:'1.5rem'}}>{totalCount}</span>
             </div>
             <button className="checkout-btn">Kiểm & Đặt hàng</button>
           </div>

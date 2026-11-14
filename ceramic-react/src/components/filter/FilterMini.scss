@@ -5,6 +5,7 @@
   width: 100%;
   min-width: 0;
   font-family: var(--font-sans);
+  padding: 0 1rem;
 }
 
 .filter-mini__header {
@@ -50,7 +51,7 @@
 .filter-group__header,
 .filter-slide-group__header {
   display: flex;
-  align-items: center;
+  align-items:start;
   justify-content: space-between;
   gap: 0.5rem;
   margin-bottom: 0.5rem;

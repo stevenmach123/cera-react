@@ -6,6 +6,7 @@ interface FilterSlideGroupProps {
   temp: FilterRangeValue;
   onUpdate: (active: 'min' | 'max', value: number) => void;
   onReset: () => void;
+  restoreRange:()=>void;
 }
 
 function formatValue(value: number, unit: string) {
@@ -26,6 +27,7 @@ export default function FilterSlideGroup({
   temp,
   onUpdate,
   onReset,
+  restoreRange
 }: FilterSlideGroupProps) {
   const [activeThumb, setActiveThumb] = useState<'min' | 'max'>('max');
 
@@ -41,9 +43,13 @@ export default function FilterSlideGroup({
     <div className="filter-slide-group">
       <div className="filter-slide-group__header">
         <h3 className="filter-slide-group__title">{slide.title}</h3>
-        <button type="button" className="filter-link" onClick={onReset}>
-          Reset
-        </button>
+        <div> 
+            <button type="button" className="filter-link" onClick={onReset}>
+            Reset    </button> <br/>
+            <button type="button" className="filter-link" onClick={restoreRange}>
+            Previous </button>
+        </div>
+     
       </div>
 
     

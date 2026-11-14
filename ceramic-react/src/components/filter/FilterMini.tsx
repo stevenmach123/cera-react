@@ -109,7 +109,16 @@ export default function FilterMini({ onApply }: FilterMiniProps) {
       }))
     );
   };
+const restoreRange = (idx: number) => {
+  const slide = filterSlides[idx];
+  if (!slide) return;
 
+  setTempSlides((prev) =>
+    prev.map((range, i) =>
+      i === idx ? { min: slide.min, max: slide.max } : range
+    )
+  );
+};
   const updateTempRange = (
     idx: number,
     active: 'min' | 'max',
@@ -200,6 +209,7 @@ export default function FilterMini({ onApply }: FilterMiniProps) {
           temp={tempSlides[i]}
           onUpdate={(active, value) => updateTempRange(i, active, value)}
           onReset={() => resetRange(i)}
+          restoreRange={()=>restoreRange(i)}
         />
       ))}
 
