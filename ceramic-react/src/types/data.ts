@@ -40,6 +40,8 @@ export const popcate:Record<PopCateKey,any> = {
 
 
 
+
+
 // ─── BigCates (Vietnamese displayName) ───
 export const BigCates: BigCate[] = [
   { name: 'modern_porcelain', displayName: 'Sứ Hiện Đại' },
@@ -844,3 +846,6 @@ export const rooms: Room[] = [
     ],
   },
 ];
+
+
+export const SubCate_Brand_Product_Entries = Object.entries(SubCate_Brand_Product)
