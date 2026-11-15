@@ -24,3 +24,5 @@ export function get_popular_products_from_room(room: Room): Product[] {
     .filter(([subCateName]) => subCateNames.includes(subCateName))
     .flatMap(([, products]) => products.filter((product) => product.other_features.includes('popular')));
 }
+
+

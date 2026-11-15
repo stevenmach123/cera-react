@@ -389,8 +389,8 @@ export const SubCate_Brand_Product: SubCateBrandProductProp = {
   // toto subtypes
   toto_subtype1: [
     {
-      displayName: 'Bồn Gốm Toto',
-      name: 'b1_item1',
+      displayName: 'Bồn rửa Toto',
+      name: 'a1_item2',
       des: 'Bồn rửa bếp gốm sứ',
       branch_brand: ['toto', 'toto_subtype1'],
       popular: true,
@@ -846,6 +846,3 @@ export const rooms: Room[] = [
     ],
   },
 ];
-
-
-export const SubCate_Brand_Product_Entries = Object.entries(SubCate_Brand_Product)

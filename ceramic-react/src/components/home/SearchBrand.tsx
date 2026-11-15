@@ -4,10 +4,11 @@ import { extract_brand_popular_product } from '../../types/myutil';
 import PopularProductCard from './PopularProductCard';
 import type { BrandBigCate, BrandProduct, Product } from '../../types/catalog';
 import './SearchRoom.scss';
+import { useProducts } from '../../context/ProductContext';
 
 export default function SearchBrand() {
   const [selectedBrand, setSelectedBrand] = useState<BrandBigCate | null>(BrandBigCates[0]);
-
+  const {checkSub_Cate_ProductExist,subCate_DisplayName,bigCate_DisplayName} = useProducts();
   const selectedBrandSubCates = selectedBrand
     ? BrandSubCates.filter((bsc) => bsc.name === selectedBrand.name)
     : [];
@@ -15,6 +16,7 @@ export default function SearchBrand() {
   const popularProducts: BrandProduct[] = selectedBrand
     ? extract_brand_popular_product(selectedBrand.name)
     : [];
+  
 
   return (
     <section className="search-room">
@@ -58,7 +60,7 @@ export default function SearchBrand() {
                       key={p.name}
                       i={i}
                       product={p as unknown as Product}
-                      des={[]}
+                      des={[bigCate_DisplayName(checkSub_Cate_ProductExist(p.name)),subCate_DisplayName(checkSub_Cate_ProductExist(p.name)),p.branch_brand[0],undefined].filter(i=>i)}
                       wordpic={p.displayName}
                     />
                   ))}

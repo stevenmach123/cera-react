@@ -4,10 +4,11 @@ import { get_popular_products_from_room } from '../../types/myutil';
 import type { Room } from '../../types/catalog';
 import './SearchRoom.scss';
 import PopularProductCard from './PopularProductCard';
+import { useProducts } from '../../context/ProductContext';
 
 export default function SearchRoom() {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(rooms[0]);
-   
+  const {bigCate_DisplayName,subCate_DisplayName} = useProducts()
   const popularProducts = selectedRoom ? get_popular_products_from_room(selectedRoom) : [];
 
   return (
@@ -76,7 +77,7 @@ export default function SearchRoom() {
                     <PopularProductCard
                         i={i}
                         product={p}
-                        des={[]}
+                        des={[bigCate_DisplayName(p),subCate_DisplayName(p),p.branch[0]]}
                         wordpic={p.displayName}
                     >
                     </PopularProductCard>
