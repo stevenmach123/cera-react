@@ -26,8 +26,17 @@ export function ProductProvider({ children }: { children: ReactNode }) {
         return (item && BigCates.find((i) => i.name === item?.big_cate_name)?.displayName) ?? "";
     };
     const subCate_DisplayName = (item: Partial<{ sub_cate_name: string }>) => {
-        return (item && SubCates.flatMap((cate) => cate?.sub_cate).find((i) => i.name === item?.sub_cate_name)?.displayName) ?? "";
+        if(item)
+            return SubCates.map(curitem=>{
+                const idx = curitem.sub_cate.findIndex(i=> i.name === item?.sub_cate_name)
+                if(idx >=0)
+                    return curitem.sub_cate[idx]
+                return undefined;
+            }).find(i=>i)?.displayName;
+        else 
+            return '';
     };
+    
     const value: ProductContext = {
         Sub_Cate_Product_dict,
         Sub_Cate_Product_Entries,
