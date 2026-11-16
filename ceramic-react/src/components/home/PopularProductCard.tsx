@@ -13,7 +13,6 @@ type PopularProductCardProps = {
 export default function PopularProductCard({ product, wordpic,des }: PopularProductCardProps) {
   const { addProduct } = useCart();
   const color = product?.img;
-  const meta = (des ?? []).filter(Boolean).join(' ● ');
 
   return (
     <div className="popular-card" >
@@ -22,7 +21,13 @@ export default function PopularProductCard({ product, wordpic,des }: PopularProd
       </div>
 
       <div className="popular-info">
-        {meta && <span className="popular-des" title={meta}>{meta}</span>}
+        <div className="popular-des-container">
+        {des.map((cat,idx)=>
+          <span className="popular-des">
+            <span className="popular-des-text" title={cat}>{cat}</span>
+          </span>
+        )}
+        </div>
         <span className="popular-name" title={wordpic}>{wordpic}</span>
       </div>
 
