@@ -10,30 +10,25 @@ type PopularProductCardProps = {
   
 };
 
-export default function PopularProductCard({ i, product, wordpic,des }: PopularProductCardProps) {
+export default function PopularProductCard({ product, wordpic,des }: PopularProductCardProps) {
   const { addProduct } = useCart();
+  const color = product?.img;
+  const meta = (des ?? []).filter(Boolean).join(' ● ');
 
   return (
-    <div key={i} className="popular-card" >
-      <div className="popular-image" style={{ backgroundColor: product?.img }}>
-         {!product?.img && <span style={{ margin: 'auto', fontSize: '4em', border: '1px solid none' }}>{wordpic[0]}</span> }
-        
+    <div className="popular-card" >
+      <div className="popular-image" style={color ? { backgroundColor: color } : undefined}>
+        {!color && <span className="popular-image-fallback">{wordpic?.[0]}</span>}
       </div>
 
       <div className="popular-info">
-        <div>
-          {des
-            ? des.length >= 2
-              ? <span>{des.join(' ● ')}</span>
-              :des.map((des, idx) => <span key={idx}>{des}</span>)
-            : <></>}
-        </div>
-        <h3 className="popular-name">{wordpic}</h3>
+        {meta && <span className="popular-des" title={meta}>{meta}</span>}
+        <span className="popular-name" title={wordpic}>{wordpic}</span>
       </div>
 
       <button
         className="add-btn2"
-        onClick={() => addProduct({ name: wordpic, img: product?.img ? product.img : wordpic[0] })}
+        onClick={() => addProduct({ name: wordpic, img: color ? color : wordpic[0] })}
       >
         Chọn
       </button>
