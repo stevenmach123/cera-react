@@ -1,16 +1,17 @@
 .bigcate-page {
   padding: 2rem 0;
-  max-width: 1500px;
+  max-width: 1200px;
+  width:1200px;
   margin: 0 auto;
+
 }
 
 .bigcate-hero {
   display: grid;
-  grid-template-columns: 40% 60%;
-  gap: 1.5rem;
+  grid-template-columns: 0.55fr 0.45fr;
   align-items: center;
-
-  padding-bottom: 1.5rem;
+  padding:1.5rem 0;
+ 
 }
 
 .bigcate-hero-left {
@@ -19,7 +20,7 @@
 
 .bigcate-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 2.5;
   border-radius: var(--radius-card);
   display: flex;
   align-items: center;
@@ -28,28 +29,47 @@
 
 .bigcate-image-label {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--color-on-primary);
 }
 
 .bigcate-hero-right {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  border:1px solid none;
+  align-items: flex-end;
+  text-align: right;
+  gap: 1rem;
 }
 
 .bigcate-title {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: var(--color-on-surface);
 }
 
 .bigcate-des {
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--color-text-sg);
   line-height: 1.6;
+  max-width: 90%;
+}
+
+.bigcate-toc {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.bigcate-toc-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  border-left: 4px solid var(--color-primary);
+  padding-left: 0.75rem;
 }
 
 .bigcate-body {
@@ -62,13 +82,13 @@
 .bigcate-temp2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .bigcate-temp3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .sub-cate-item.bigcate-wide {
@@ -82,7 +102,7 @@
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-button);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-on-surface);
   cursor: pointer;
   transition: all 0.2s ease;

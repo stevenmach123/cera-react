@@ -74,6 +74,10 @@ export default function BigCatePage() {
         </div>
       </div>
 
+      <div className="bigcate-toc">
+        <h3 className="bigcate-toc-title">Mục Lục Con</h3>
+      </div>
+
       <div className="bigcate-body">
         {Mapprod.map((item, index) => (
           <div key={index} className={item.org == 'three' ? 'bigcate-temp3' : 'bigcate-temp2'}>
