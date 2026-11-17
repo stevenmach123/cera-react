@@ -14,6 +14,7 @@
   font-weight: 700;
    max-width: 1500px;
    margin:0rem auto 1rem;
+  border:1px solid red;
    
 }
 
@@ -25,6 +26,7 @@
   grid-template-columns: 2fr 3fr;
   gap: 1.5rem;
   max-width: 1500px;
+  border:1px solid none;
   margin: 0 auto;
 
 }

@@ -44,11 +44,11 @@ export const popcate:Record<PopCateKey,any> = {
 
 // ─── BigCates (Vietnamese displayName) ───
 export const BigCates: BigCate[] = [
-  { name: 'modern_porcelain', displayName: 'Sứ Hiện Đại' },
-  { name: 'modern_desk', displayName: 'Bàn Trà Hiện Đại' },
-  { name: 'modern_seat', displayName: 'Ghế Ngồi Hiện Đại' },
-  { name: 'traditional_craft', displayName: 'Gốm Truyền Thống' },
-  { name: 'modern_accessory', displayName: 'Phụ Kiện Hiện Đại' },
+  { name: 'modern_porcelain', displayName: 'Sứ Hiện Đại', des: 'Các sản phẩm sứ hiện đại với thiết kế tinh tế, kiểu dáng thanh lịch và tính thẩm mỹ cao.'},
+  { name: 'modern_desk', displayName: 'Bàn Trà Hiện Đại', des: 'Bàn trà với kiểu dáng hiện đại, đường nét tối giản, mang đến vẻ đẹp sang trọng cho không gian sống.' },
+  { name: 'modern_seat', displayName: 'Ghế Ngồi Hiện Đại',des: 'Bộ sưu tập ghế ngồi với thiết kế tiện nghi, kiểu dáng độc đáo và chất liệu đa dạng.' },
+  { name: 'traditional_craft', displayName: 'Gốm Truyền Thống',des:'Các sản phẩm gốm thủ công mang đậm nét văn hóa truyền thống, thể hiện sự tinh xảo trong từng đường nét.' },
+  { name: 'modern_accessory', displayName: 'Phụ Kiện Hiện Đại',des:'Những món phụ kiện trang trí hiện đại, tạo điểm nhấn tinh tế và hoàn thiện vẻ đẹp cho không gian nội thất.' },
 ];
 
 // ─── SubCates (Vietnamese displayName) ───

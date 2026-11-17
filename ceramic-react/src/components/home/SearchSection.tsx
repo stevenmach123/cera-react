@@ -1,43 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import './SearchSection.scss';
-
-interface Crumb {
-  label: string;
-  url: string;
-}
 
 export default function SearchSection() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
-  const [breadcrumbs, setBreadcrumbs] = useState<Crumb[]>([]);
   const navigate = useNavigate();
-  const location = useLocation();
   const { totalCount, openCart } = useCart();
-
- 
-  function buildBreadcrumbs() {
-    const segments = location.pathname.split('/').filter((s) => s);
-    const crumbs: Crumb[] = [{ label: 'Nhà', url: '/' }];
-
-    segments.forEach((segment) => {
-      if (segment === 'home') return;
-      let val = '';
-      if (segment === 'products') val = 'Mẫu';
-      crumbs.push({
-        label: val.charAt(0).toUpperCase() + val.slice(1).replace(/-/g, ' '),
-        url: segment,
-      });
-    });
-
-    setBreadcrumbs(crumbs);
-  }
-
-  useEffect(() => {
-    if(location.pathname)
-        buildBreadcrumbs();
-  }, [location.pathname]);
 
   const onSearch = () => {
     console.log('Searching for:', searchQuery);
@@ -51,10 +21,6 @@ export default function SearchSection() {
   const clearNavigate = () => {
     setSelectedFilter(null);
     navigate('/home/products');
-  };
-
-  const navigateTo = (url: string) => {
-    navigate(url);
   };
 
   return (
@@ -93,21 +59,6 @@ export default function SearchSection() {
             )}
           </a>
         </div>
-
-        {breadcrumbs.length > 0 && (
-          <div className="breadcrumbs">
-            {breadcrumbs.map((crumb, i) => (
-              <div className="item" key={`${crumb.label}-${i}`}>
-                <span
-                  className="breadcrumb-link"
-                  onClick={() => navigateTo(crumb.url)}
-                >
-                  {crumb.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
 
         <div className="filter-tags">
           <span

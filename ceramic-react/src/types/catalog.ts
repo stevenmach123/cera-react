@@ -12,7 +12,7 @@ export type BranchBrand = ['toto', TotoSubType] | ['inax', InaxSubType] | ['nori
 
 export interface BigCate {
   name: BigCateName;
-  displayName: string;
+  displayName: string;des:string
 }
 
 export interface SubCate {
