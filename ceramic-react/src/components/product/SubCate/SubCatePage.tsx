@@ -20,10 +20,10 @@ function ImageMap({ item }: { item: BigCate }) {
 }
 
 export default function SubCatePage() {
-  const { bigcate } = useParams<{ bigcate: string }>();
+  const {subcate } = useParams<{ subcate: string }>();
 
-  const subCate: SubCate | undefined = SubCates.flatMap((i) => i.sub_cate).find((sc) => sc.name === bigcate);
-  const parent = SubCates.find((i) => i.sub_cate.some((sc) => sc.name === bigcate));
+  const subCate: SubCate | undefined = SubCates.flatMap((i) => i.sub_cate).find((sc) => sc.name === subcate);
+  const parent = SubCates.find((i) => i.sub_cate.some((sc) => sc.name === subcate));
   const bigCate = BigCates.find((c) => c.name === parent?.name);
 
   if (!subCate || !bigCate) return null;

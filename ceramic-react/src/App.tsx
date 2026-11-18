@@ -17,7 +17,7 @@ export default function App() {
         <Route path="products" element={<ProductList />}>
           <Route path=":id" element={<PopCate />} />
           <Route path="bigcate/:bigcate" element={<BigCatePage />} />
-          <Route path="subcate/:bigcate" element={<SubCatePage />} />
+          <Route path="subcate/:subcate" element={<SubCatePage />} />
 
         </Route>
       </Route>
