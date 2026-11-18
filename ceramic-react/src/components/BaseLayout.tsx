@@ -5,7 +5,7 @@ import CartSidebar from './home/CartSidebar';
 import PopularContent from './home/PopularContent';
 
 import './BaseLayout.scss';
-import { BigCates } from '../types/data';
+import { BigCates, SubCates } from '../types/data';
 
 interface Crumb {
   label: string;
@@ -27,9 +27,14 @@ export default function BaseLayout() {
       if (segment === 'products') val = 'Mẫu';
       else {
         const bigCate = BigCates.find((cate) => cate.name === segment);
+        const subCate = SubCates.flatMap ((i) => i.sub_cate).find(item => item.name === segment);
         if (bigCate){
             val = bigCate.displayName;
             segment = ['products','bigcate',bigCate.name].join('/')
+        }
+        if(subCate){
+            val = subCate.displayName;
+            segment = ['products','subcate',subCate.name].join('/')
         }
        
       }
