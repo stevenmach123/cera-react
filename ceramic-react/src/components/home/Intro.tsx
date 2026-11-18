@@ -15,23 +15,23 @@ interface Faq {
   open: boolean;
 }
 
-
-
 const initialFaqs: Faq[] = [
   {
-    question: 'How are your ceramics made?',
+    question: 'Sản phẩm gốm sứ được làm như thế nào?',
     answer:
-      'Each piece is handcrafted using traditional techniques passed down through generations.',
+      'Mỗi sản phẩm đều được chế tác thủ công bằng kỹ thuật truyền thống, nung ở nhiệt độ cao để đảm bảo độ bền và vẻ đẹp tự nhiên.',
     open: false,
   },
   {
-    question: 'Do you ship internationally?',
-    answer: 'Yes, we ship to over 50 countries worldwide with careful packaging.',
+    question: 'Gốm sứ có an toàn cho sức khỏe không?',
+    answer:
+      'Có, sản phẩm được làm từ nguyên liệu tự nhiên với lớp men an toàn, không chứa chì hay hóa chất độc hại, phù hợp để sử dụng hàng ngày.',
     open: false,
   },
   {
-    question: 'What is your return policy?',
-    answer: 'We offer a 30-day return policy for all unused items in original packaging.',
+    question: 'Làm thế nào để bảo quản sản phẩm gốm sứ?',
+    answer:
+      'Bạn nên rửa nhẹ bằng nước ấm và khăn mềm, tránh va đập cũng như thay đổi nhiệt độ đột ngột để sản phẩm luôn bền đẹp theo thời gian.',
     open: false,
   },
 ];
@@ -126,9 +126,10 @@ export default function Intro() {
         ))}
       </div> */}
 
+
       {/* FAQ Accordion */}
       <div className="faq-section">
-        <h2 className="faq-title">Frequently Asked Q/A</h2>
+        <h2 className="faq-title">Câu hỏi thường gặp</h2>
         <div className="faq-list">
           {faqs.map((faq, i) => (
             <div className="faq-item" key={faq.question}>

@@ -41,6 +41,21 @@ let rooms =[{name:'dinning',"sub_cate":[{displayName:"",sub_cate_name:'kitchen_p
 ]
 
 ---
+next find the click of subcate text in des:string[] eg. 
+ const goToSubCate = (text: string) => { 
+  //previous code with below
+    const subCate = SubCates.flatMap ((i) => i.subcate).find(item => item.displayName === text);
+    if(subcate){
+            navigate(`/home/products/subcate/${subCate.name}`);
+    }
+ }
+this mean create additional route in app.tsx 
+eg. <Route path="subcate/:bigcate" element={<SubCatePage />} />
+can follow logic of component BigCatePage.scss and BigCatePage.tsx (no need  <div className="bigcate-body"> and Mapprod for now)
+
+
+
+
 
 // end here
 
@@ -64,31 +79,3 @@ popular
         sub_cate_product_dict[sub_cate] = product_dict
 
 
-
-
-//relation of some overlap between mock data such as Sub_Cate_Product vs SubCate_Brand_Product, rooms sub_cate vs Subcates , rooms collection vs Sub_Cate_Product. can be creative on construct mock data or types.     
-let v = "dfd"
-data_item = [{img:'#'},{img:'#'}]
-function ImageMap(item)=>{
-    item.src.include('#')?<div class="color-img"></div> : <img src={data_item.src} /> 
-}
-<ImageMap item={data_item} />
-
-
-
-const tabCount = tabs.length; 
-const [tabPaused,SetTabPaused] = useState<>() 
-const [tabIndex,SetTabIndex] = useState(0); 
-const [activeTab, setActiveTab] = useState(tabs[0].key);
-
-
-useEffect(()=>{
-    if(tabPaused || tabCount ) return
-    const timer = setInterval(()=>
-        SetTabIndex(index=>{
-            setActiveTab(activeTab[(index+1)%(tabCount+1)])
-            return index +1;
-        })
-    ,[AUTOPLAYTAB_MS])
-    return ()=> clearInterval(timer)
-},[tabPaused,tabCount])

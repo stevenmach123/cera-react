@@ -3,7 +3,7 @@ import { useCart } from '../../context/CartContext';
 import './PopularContent.scss'
 import { Product } from '../../types/catalog';
 import { useNavigate } from 'react-router-dom';
-import { BigCates } from '../../types/data';
+import { BigCates, SubCates } from '../../types/data';
 type PopularProductCardProps = {
   i: number;
   product: PopularItem |Product;
@@ -19,6 +19,8 @@ export default function PopularProductCard({ product, wordpic,des }: PopularProd
   const goToSubCate = (text: string) => {
     const bigCate = BigCates.find((cate) => cate.displayName === text);
     if (bigCate) navigate(`/home/products/bigcate/${bigCate.name}`);
+    const subCate = SubCates.flatMap((i) => i.sub_cate).find((item) => item.displayName === text);
+    if (subCate) navigate(`/home/products/subcate/${subCate.name}`);
   };
   return (
     <div className="popular-card" >
@@ -31,7 +33,7 @@ export default function PopularProductCard({ product, wordpic,des }: PopularProd
           {(des ?? []).map((cat,idx)=>
           <span
             key={idx}
-            className={`popular-des ${BigCates.some((c) => c.displayName === cat) ? 'popular-des-link' : ''}`}
+            className={`popular-des ${BigCates.some((c) => c.displayName === cat) || SubCates.flatMap((i) => i.sub_cate).some((s) => s.displayName === cat) ? 'popular-des-link' : ''}`}
             onClick={() => goToSubCate(cat)}
           >
             <span className="popular-des-text" title={cat}>{cat}</span>
