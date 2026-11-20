@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { BigCates, SubCates } from '../../../types/data';
-import type { BigCate } from '../../../types/catalog';
+import type { BigCate, SubCate } from '../../../types/catalog';
 import type { Organize } from '../../../types/types';
 import './BigCatePage.scss';
+import { useProducts } from '../../../context/ProductContext';
 
 const random = () => Math.floor(Math.random() * 5) % 2;
 
@@ -23,23 +24,35 @@ function ImageMap({ item }: { item: BigCate }) {
   );
 }
 
+
 export default function BigCatePage() {
   const { bigcate } = useParams<{ bigcate: string }>();
+  const {Sub_Cate_Product_dict } = useProducts()
   //const [hello,setHello] = useState(0);
   //console.log("bigcate",bigcate)
+     const navigate = useNavigate();
 
-  
+    
 
   const bigCate = BigCates.find((cate) => cate.name === bigcate);
   const selectedBigcate = SubCates.find((cate) => cate.name === bigcate);
 
+  const goToSubCate = (text: string) => {
+      if(bigcate &&  selectedBigcate.sub_cate.find(i=>i.name===text)  ){
+          navigate(`/home/products/subcate/${text}`);
+      }
+  };
+
   const Mapprod = useMemo(() => {
-    const result: { items: string[]; org: Organize }[] = [];
-    const names = selectedBigcate?.sub_cate.map((sc) => sc.displayName) ?? [];
-    let range = 0;
+    const result: { items: Pick<SubCate, 'displayName' | 'name'>[]; org: Organize }[] = [];
+    const names: Pick<SubCate, 'displayName' | 'name'>[] =
+    selectedBigcate?.sub_cate.map((sc) => ({
+        displayName: sc.displayName,
+        name: sc.name
+    })) ?? [];    let range = 0;
     let mod = 1;
     let index = 0;
-    let temp: { items: string[]; org: Organize } = { items: [], org: 'two' };
+    let temp: { items: Pick<SubCate, 'displayName' | 'name'>[]; org: Organize } = { items: [], org: 'two' };
 
     for (const v of names) {
       if (!(range % (mod + 1))) {
@@ -81,9 +94,9 @@ export default function BigCatePage() {
       <div className="bigcate-body">
         {Mapprod.map((item, index) => (
           <div key={index} className={item.org == 'three' ? 'bigcate-temp3' : 'bigcate-temp2'}>
-            {item.items.map((name, idx) => (
-              <div key={idx} className="sub-cate-item bigcate-wide">
-                <span>{name}</span>
+            {item.items.map((vi, idx) => (
+              <div onClick={()=>goToSubCate(vi.name)} key={idx} className="sub-cate-item bigcate-wide">
+                <span>{vi.displayName}</span>
               </div>
             ))}
           </div>
