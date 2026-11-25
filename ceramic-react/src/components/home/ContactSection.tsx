@@ -16,40 +16,40 @@ const subjectOptions: { value: string; label: string }[] = [
   {
     value: 'product-information',
     label:
-      'Product Information – know more about your ceramic and porcelain collections.',
+      'Thông tin sản phẩm – tìm hiểu thêm về các bộ sưu tập gốm và sứ của chúng tôi.',
   },
   {
     value: 'pricing-quotation',
-    label: 'Pricing & Quotation – request pricing or a project quotation.',
+    label: 'Bảng giá & Báo giá – yêu cầu báo giá hoặc báo giá cho dự án.',
   },
   {
     value: 'showroom-visit',
-    label: "Showroom Visit – I'd like to schedule a showroom visit.",
+    label: 'Tham quan showroom – tôi muốn đặt lịch tham quan showroom.',
   },
   {
     value: 'interior-design',
-    label: 'Interior Design Consultation – help planning my home interior design.',
+    label: 'Tư vấn thiết kế nội thất – hỗ trợ lên ý tưởng thiết kế nội thất ngôi nhà của bạn.',
   },
   {
     value: 'tile-material',
     label:
-      'Tile & Material Selection – recommendations for tiles, colors, and materials.',
+      'Lựa chọn gạch & vật liệu – gợi ý về gạch, màu sắc và vật liệu phù hợp.',
   },
   {
     value: 'product-samples',
-    label: 'Product Samples – request material or tile samples.',
+    label: 'Mẫu sản phẩm – yêu cầu mẫu vật liệu hoặc mẫu gạch.',
   },
   {
     value: 'installation-support',
     label:
-      'Installation & Technical Support – questions about installation or product specifications.',
+      'Lắp đặt & Hỗ trợ kỹ thuật – thắc mắc về lắp đặt hoặc thông số kỹ thuật sản phẩm.',
   },
   {
     value: 'project-collaboration',
     label:
-      "Project Collaboration – I'd like to discuss a residential or commercial project.",
+      'Hợp tác dự án – tôi muốn trao đổi về một dự án nhà ở hoặc thương mại.',
   },
-  { value: OTHER_SUBJECT, label: 'Other inquires – type my own subject' },
+  { value: OTHER_SUBJECT, label: 'Yêu cầu khác – nhập chủ đề của riêng bạn' },
 ];
 
 interface FormState {
@@ -101,23 +101,23 @@ export default function ContactSection() {
     setError('');
 
     if (!form.name.trim()) {
-      setError('Please tell us your name.');
+      setError('Vui lòng cho chúng tôi biết tên của bạn.');
       return;
     }
     if (!form.email.trim() && preferContact === 'email') {
-      setError('Please provide an email address so we can reply to you.');
+      setError('Vui lòng nhập địa chỉ email để chúng tôi có thể liên hệ lại với bạn.');
       return;
     }
     if (!subject) {
-      setError('Please choose a subject.');
+      setError('Vui lòng chọn một chủ đề.');
       return;
     }
     if (isCustomSubject && !form.customSubject.trim()) {
-      setError('Please type your own subject.');
+      setError('Vui lòng nhập chủ đề của riêng bạn.');
       return;
     }
     if (!form.content.trim()) {
-      setError('Please share a few details about your request.');
+      setError('Vui lòng cho chúng tôi biết thêm một vài chi tiết về yêu cầu của bạn.');
       return;
     }
 
@@ -137,51 +137,51 @@ export default function ContactSection() {
       <div className="contactme-card">
         {/* Left: intro / info panel */}
         <aside className="contactme-info">
-          <span className="contactme-eyebrow">Contact</span>
-          <h2 className="contactme-heading">Have a Question About Your Next Design?</h2>
-          <p className="contactme-subheading">We&rsquo;d love to hear from you!</p>
+          <span className="contactme-eyebrow">Liên hệ</span>
+          <h2 className="contactme-heading">Bạn có câu hỏi về thiết kế tiếp theo?</h2>
+          <p className="contactme-subheading">Chúng tôi rất muốn nghe ý kiến của bạn!</p>
           <p className="contactme-description">
-            Our team will get back to you via email or Zalo within 2 business days.
+            Đội ngũ của chúng tôi sẽ liên hệ lại với bạn qua email hoặc Zalo trong vòng 2 ngày làm việc.
           </p>
 
           <ul className="contactme-points">
             <li className="contactme-point">
               <span className="contactme-point-dot" />
-              Free consultation on tiles, colors and materials
+              Tư vấn miễn phí về gạch, màu sắc và vật liệu
             </li>
             <li className="contactme-point">
               <span className="contactme-point-dot" />
-              Showroom visit &amp; sample delivery on request
+              Tham quan showroom và giao mẫu theo yêu cầu
             </li>
             <li className="contactme-point">
               <span className="contactme-point-dot" />
-              Quotations for residential and commercial projects
+              Báo giá cho các dự án nhà ở và thương mại
             </li>
           </ul>
 
           <div className="contactme-chip">
             <span className="contactme-chip-dot" />
-            Replies within 2 business days
+            Phản hồi trong vòng 2 ngày làm việc
           </div>
         </aside>
 
         {/* Right: form panel */}
         <div className="contactme-form-panel">
-          <h3 className="contactme-form-title">Send us a message</h3>
+          <h3 className="contactme-form-title">Gửi tin nhắn cho chúng tôi</h3>
           <p className="contactme-form-desc">
-            Tell us what you need and the right consultant will get in touch with you.
+            Hãy cho chúng tôi biết bạn cần gì, chuyên viên phù hợp sẽ liên hệ với bạn.
           </p>
 
           {sent ? (
             <div className="contactme-success" role="status">
               <span className="contactme-success-icon">&#10003;</span>
-              <h4>Thank you, {form.name.trim()}!</h4>
+              <h4>Cảm ơn bạn, {form.name.trim()}!</h4>
               <p>
-                Your request has been received. Our team will contact you via{' '}
-                {preferContact === 'email' ? 'email' : 'Zalo'} within 2 business days.
+                Yêu cầu của bạn đã được ghi nhận. Đội ngũ của chúng tôi sẽ liên hệ với bạn qua{' '}
+                {preferContact === 'email' ? 'email' : 'Zalo'} trong vòng 2 ngày làm việc.
               </p>
               <button type="button" className="contactme-submit" onClick={resetForm}>
-                Send another message
+                Gửi tin nhắn khác
               </button>
             </div>
           ) : (
@@ -189,14 +189,14 @@ export default function ContactSection() {
               <div className="contactme-row">
                 <div className="contactme-field">
                   <label className="contactme-label" htmlFor="contactme-name">
-                    Name
+                    Họ và tên
                   </label>
                   <input
                     id="contactme-name"
                     name="name"
                     type="text"
                     className="contactme-input"
-                    placeholder="Your full name"
+                    placeholder="Nhập họ và tên của bạn"
                     value={form.name}
                     onChange={handleChange}
                   />
@@ -204,7 +204,7 @@ export default function ContactSection() {
 
                 <div className="contactme-field">
                   <label className="contactme-label" htmlFor="contactme-email">
-                    Email address
+                    Địa chỉ email
                   </label>
                   <input
                     id="contactme-email"
@@ -221,14 +221,14 @@ export default function ContactSection() {
               <div className="contactme-row">
                 <div className="contactme-field">
                   <label className="contactme-label" htmlFor="contactme-phone">
-                    Phone
+                    Số điện thoại
                   </label>
                   <input
                     id="contactme-phone"
                     name="phone"
                     type="tel"
                     className="contactme-input"
-                    placeholder="Your phone number"
+                    placeholder="Nhập số điện thoại của bạn"
                     value={form.phone}
                     onChange={handleChange}
                   />
@@ -236,7 +236,7 @@ export default function ContactSection() {
 
                 <div className="contactme-field">
                   <label className="contactme-label" htmlFor="contactme-prefer">
-                    Prefer contact
+                    Phương thức liên hệ
                   </label>
                   <div className="contactme-select-wrap">
                     <select
@@ -257,7 +257,7 @@ export default function ContactSection() {
 
               <div className="contactme-field">
                 <label className="contactme-label" htmlFor="contactme-subject">
-                  Subject
+                  Chủ đề
                 </label>
                 <div className="contactme-select-wrap">
                   <select
@@ -269,7 +269,7 @@ export default function ContactSection() {
                       setError('');
                     }}
                   >
-                    <option value="">Select a subject…</option>
+                    <option value="">Chọn chủ đề…</option>
                     {subjectOptions.map((option) => (
                       <option key={option.value} value={option.value}>
                         {option.label}
@@ -279,18 +279,18 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Appears only when "Other inquires" is chosen */}
+              {/* Appears only when "Yêu cầu khác" is chosen */}
               {isCustomSubject && (
                 <div className="contactme-custom-subject">
                   <label className="contactme-label" htmlFor="contactme-custom-subject">
-                    Your own subject
+                    Chủ đề của bạn
                   </label>
                   <input
                     id="contactme-custom-subject"
                     name="customSubject"
                     type="text"
                     className="contactme-input"
-                    placeholder="Type your own subject here…"
+                    placeholder="Nhập chủ đề của riêng bạn tại đây…"
                     value={form.customSubject}
                     onChange={handleChange}
                   />
@@ -299,13 +299,13 @@ export default function ContactSection() {
 
               <div className="contactme-field">
                 <label className="contactme-label" htmlFor="contactme-content">
-                  Content
+                  Nội dung
                 </label>
                 <textarea
                   id="contactme-content"
                   name="content"
                   className="contactme-input contactme-textarea"
-                  placeholder="Tell us more about your project, the products you are interested in, quantities, timeline…"
+                  placeholder="Hãy cho chúng tôi biết thêm về dự án, loại sản phẩm bạn quan tâm, số lượng, thời gian cần hoàn thành…"
                   value={form.content}
                   onChange={handleChange}
                 />
@@ -319,7 +319,7 @@ export default function ContactSection() {
 
               <div className="contactme-actions">
                 <button type="submit" className="contactme-submit">
-                  Send message
+                  Gửi tin nhắn
                 </button>
               </div>
             </form>
@@ -329,4 +329,3 @@ export default function ContactSection() {
     </section>
   );
 }
-
