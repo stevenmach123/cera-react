@@ -72,9 +72,9 @@ export default function BaseLayout() {
             <Link to="products" className="nav-link">
               Mẫu
             </Link>
-            <a href="#" className="nav-link">
+            <Link to="/intro#contact" className="nav-link">
               Liên hệ
-            </a>
+            </Link>
             <a href="#" className="nav-link">
               Đăng nhập
             </a>

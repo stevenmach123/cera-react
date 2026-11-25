@@ -35,7 +35,7 @@ export default function BigCatePage() {
     
 
   const bigCate = BigCates.find((cate) => cate.name === bigcate);
-  const selectedBigcate = SubCates.find((cate) => cate.name === bigcate);
+  const selectedBigcate = useMemo(()=>SubCates.find((cate) => cate.name === bigcate),[bigcate]);
 
   const goToSubCate = (text: string) => {
       if(bigcate &&  selectedBigcate.sub_cate.find(i=>i.name===text)  ){

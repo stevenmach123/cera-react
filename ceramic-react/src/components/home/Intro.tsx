@@ -8,6 +8,7 @@ import SearchBrand from './SearchBrand';
 import PopularContent from './PopularContent';
 import ValueTabs from './ValueTabs';
 import HeroSlider from './HeroSlider';
+import ContactSection from './ContactSection';
 
 interface Faq {
   question: string;
@@ -146,6 +147,9 @@ export default function Intro() {
           ))}
         </div>
       </div>
+      {/* Contact */}
+      <ContactSection />
+
 
       {/* Featured Product Highlight */}
       <div className="highlight-section">

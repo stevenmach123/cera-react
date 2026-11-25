@@ -1,4 +1,4 @@
-﻿import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import BaseLayout from './components/BaseLayout';
 import Intro from './components/home/Intro';
 import ProductList from './components/product/ProductList';
@@ -20,6 +20,9 @@ export default function App() {
           <Route path="subcate/:subcate" element={<SubCatePage />} />
 
         </Route>
+      </Route>
+      <Route path="/intro" element={<BaseLayout />}>
+        <Route index element={<Intro />} />
       </Route>
       <Route path="/cart" element={<CartPage />} />
       <Route path="*" element={<Navigate to="/home" replace />} />
