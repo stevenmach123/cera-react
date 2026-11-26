@@ -555,6 +555,24 @@ export const rooms: Room[] = [
     ],
     collection: [
       {
+        name:'dining_set_v0',
+        displayName: 'Bộ Bữa Ăn Hài Hòa',
+        product:[
+           {
+            name: 'a1_item1',
+            displayName: 'Bộ Đĩa Gốm Bếp',
+            sub_cate_name: 'kitchen_porcelain',
+            big_cate_name: 'modern_porcelain',
+          },
+          {
+            name: 'a2_item1',
+            displayName: 'Khay Gốm Bàn',
+            sub_cate_name: 'kitchen_desk',
+            big_cate_name: 'modern_desk',
+          },
+        ]
+      },
+      {
         name: 'dining_set_v1',
         displayName: 'Bộ Bữa Ăn Hiện Đại',
         product: [

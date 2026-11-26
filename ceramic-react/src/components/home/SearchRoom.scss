@@ -23,7 +23,7 @@
 
 .search-room-grid {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 1.6fr 3fr;
   gap: 1.5rem;
   max-width: 1500px;
   border:1px solid none;
@@ -97,13 +97,18 @@
   }
 }
 .right-section .grid-as{
-    display:grid;
-    grid-template-columns: 0.5fr 0.7fr;
+    display:flex;
     gap:1rem;
     border:1px solid none;
-  
+
+    .grid-left{
+        flex:0.5 1 auto;
+    }
+    .grid-right{
+       border:1px solid none;
+    }
     .title-as{
-        font-family:var(--font-serif);
+        font-family:novar(--font-serif);
         font-size:1.5rem;
         font-weight: bold;
     }
@@ -149,22 +154,36 @@ align-items: flex-end;
 }
 
 /* Collection horizontal list */
-.collection-list {
+// .collection-list {
+//   display: inline-flex;
+//   gap: 0.1rem;
+//   overflow-x: auto;
+//   border:1px solid none;
+
+// }
+
+.collection-nav {
   display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-outline-variant) transparent;
-
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-outline-variant);
-    border-radius: 2px;
-  }
+  align-items: center;
+  gap: 0.5rem
 }
+
+.collection-list {
+  width: 470px;
+  overflow: hidden;      /* hide 3rd+ items; no native scrollbar */
+}
+
+.collection-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.45, 0, 0.2, 1); /* same easing as PopularContent */
+}
+
+.collection-item {
+  flex: 0 0 200px;       /* fixed width -> step math stays predictable */
+  width: 200px;
+  aspect-ratio: 1 / 1.2;
+}
+
 
 
 /* Popular products */
@@ -192,7 +211,7 @@ align-items: flex-end;
   background-color: var(--color-surface-container-lowest);
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-card);
-  overflow: hidden;
+  overflow-x: auto;
   transition: all 0.2s ease;
 
   &:hover {

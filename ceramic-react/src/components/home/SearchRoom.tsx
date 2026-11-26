@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { rooms } from '../../types/data';
 import { get_popular_products_from_room } from '../../types/myutil';
 import type { Room } from '../../types/catalog';
@@ -11,6 +11,14 @@ export default function SearchRoom() {
   const {bigCate_DisplayName,subCate_DisplayName} = useProducts()
   const popularProducts = selectedRoom ? get_popular_products_from_room(selectedRoom) : [];
 
+
+  const COL_VISIBLE = 2;
+  const collections = selectedRoom?.collection ?? [];
+  const maxColOffset = Math.max(0, collections.length - COL_VISIBLE);
+  const [colOffset, setColOffset] = useState(0);
+  useEffect(() => {
+    setColOffset(0);
+  }, [selectedRoom?.name]);
   return (
     <section className="search-room">
       <h2 className="search-room-title">Tìm kiếm theo Phòng</h2>
@@ -50,21 +58,54 @@ export default function SearchRoom() {
               {/* Part 2: collection cards horizontal */}
               <div className="right-section">
                 <div className="grid-as">
-                    <div>
+                    <div className="grid-left">
                         <span className="title-as">Những bộ sưu tập nổi tiếng của {selectedRoom.displayName}</span><br/>
                         {selectedRoom.collection?.map((col,index) => (
                             <span className="collection-name" style={{padding:'0px 0.2rem',color:'var(--color-text-sg)'}}>{col.displayName}{index < selectedRoom.collection.length - 1 ? ',' : ''}</span>
                         ))}    
                     </div>
 
-                    <div>                 
-                        <div className="collection-list">
+                    <div className="grid-right">                 
+                        {/* <div className="collection-list">
                         {selectedRoom.collection?.map((col) => (
-                             <div key={col.name}  className="sub-cate-item" style={{width:'180px',aspectRatio:'1/1.2'}}>
+                             <div key={col.name}  className="sub-cate-item" style={{width:'200px',aspectRatio:'1/1.2'}}>
                                  <span>{col.displayName}</span>
                              </div>
                         ))}
-                        </div>
+                        </div> */}
+
+                         <div className="collection-nav">
+                            <button
+                              className="nav-arrow"
+                              disabled={colOffset === 0}
+                              onClick={() => setColOffset((i) => Math.max(0, i - 1))}
+                            >
+                              ‹
+                            </button>
+
+                            {/* viewport clips the 3rd+ items */}
+                            <div className="collection-list">
+                              <div
+                                className="collection-track"
+                                style={{ transform: `translateX(calc(-${colOffset} * (200px + 1rem)))` }}
+                              >
+                                {selectedRoom.collection?.map((col) => (
+                                  <div key={col.name} className="sub-cate-item collection-item">
+                                    <span>{col.displayName}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            <button
+                              className="nav-arrow"
+                              disabled={colOffset >= maxColOffset}
+                              onClick={() => setColOffset((i) => Math.min(maxColOffset, i + 1))}
+                            >
+                              ›
+                            </button>
+                          </div>
+
                     </div>
               </div>
               </div>
